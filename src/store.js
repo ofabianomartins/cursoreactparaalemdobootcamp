@@ -1,5 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, applyMiddleware } from '@reduxjs/toolkit'
 
-export default configureStore({
+import logger from 'redux-logger'
+
+const store = configureStore({
   reducer: {}
-})
+}, applyMiddleware(logger) )
+
+export default store;
