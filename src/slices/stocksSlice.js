@@ -6,15 +6,16 @@ export const stocksSlice = createSlice({
   initialState: {
     stocksList: [],
     selectedStock: null,
-    selectedDate: moment().format()
+    selectedDate: moment().format('YYYY-MM-DD')
   },
   reducers: {
     getStocks: (state) => {
       // Vou na api pegar as informação
       // vou pegar as informação e colocar no stocksList
     },
-    setSelectedDate: (state) => {
+    setSelectedDate: (state, action) => {
       // Vou colocar a data no selectedDate
+      state.selectedDate = action.payload
     },
     setSelectedStock: (state) => {
       // Vou colocar a ação no selectedStock
@@ -23,6 +24,6 @@ export const stocksSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {  } = stocksSlice.actions
+export const { setSelectedDate  } = stocksSlice.actions
 
 export default stocksSlice.reducer

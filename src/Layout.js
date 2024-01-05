@@ -8,9 +8,11 @@ function Layout() {
   const userLogon = useSelector(state => state.login.userLogon)
 
   return (
-    <div className="Layout">
+    <div className="flex justify-center">
       {!userLogon && <Login />}
-      {userLogon && <div> <TopBar /> </div>} 
+      {userLogon && <div className="container">
+        <TopBar /> 
+      </div>} 
     </div>
   );
 }

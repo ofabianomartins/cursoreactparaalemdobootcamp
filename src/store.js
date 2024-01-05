@@ -1,13 +1,17 @@
 import { configureStore, applyMiddleware } from '@reduxjs/toolkit'
 
-import logger from 'redux-logger'
+// import { createLogger } from 'redux-logger'
 
 import loginReducer from './slices/loginSlice'
+import stocksReducer from './slices/stocksSlice'
+
+// const middlewares = [ createLogger() ]
 
 const store = configureStore({
   reducer: {
-    login: loginReducer
+    login: loginReducer,
+    stocks: stocksReducer
   }
-}, applyMiddleware(logger) )
+})
 
 export default store;
